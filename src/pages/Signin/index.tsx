@@ -12,6 +12,7 @@ function Signin() {
   const signin = async () => {
     if (email === '' || password === '') return;
     const { user, token } = await authRepository.singin(email, password);
+    console.log(user, token);
     localStorage.setItem('token', token);
     setCurrentUser(user);
   }
